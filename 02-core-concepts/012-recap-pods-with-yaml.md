@@ -52,7 +52,7 @@ spec:
 
 To apply it
 
-```shell
+```bash
 $ kubectl create -f pod-definition.yaml
 ```
 
@@ -60,12 +60,12 @@ $ kubectl create -f pod-definition.yaml
 
 To see pods in our cluster:
 
-```shell
+```bash
 # kubectl get pods
 ```
 
 To get detailed information about a pod:
 
-```shell
+```bash
 $ kubectl describe pod myapp
 ```

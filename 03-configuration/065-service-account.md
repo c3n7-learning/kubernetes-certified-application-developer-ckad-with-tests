@@ -19,13 +19,13 @@ Service accounts are used by
 
 Create a service account:
 
-```shell
+```bash
 $ kubectl create serviceaccount dashboard-sa
 ```
 
 Get the service accounts:
 
-```shell
+```bash
 $ kubectl get serviceaccount
 ```
 
@@ -33,7 +33,7 @@ Describe the created service account:
 
 - The application will need the Token to authenticate against the k8s api
 
-```shell
+```bash
 $ kubectl describe serviceaccount dashboard-ca
 
 Name:                dashboard-sa
@@ -52,7 +52,7 @@ The token though is stored as a secret object
 
 To view the token:
 
-```shell
+```bash
 $ kubectl describe secret dashboard-sa-token-kbbdm
 
 Name:         dashboard-sa-token-kbbdm
@@ -71,7 +71,7 @@ eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiw
 
 This token can then be used to authenticate against k8s api:
 
-```shell
+```bash
 $ curl https://192.168.56.70:6443/api -insecure
      --header "Authorization: Bearer eyJhbGci..."
 ```
@@ -87,7 +87,7 @@ Each namespace has its own `default` service account:
 
 - Its token is mounted onto pods as a volume mount
 
-```shell
+```bash
 $ kubectl get serviceaccount
 
 NAME           AGE
@@ -97,7 +97,7 @@ default        2d3h
 
 How it is mounted once the pod is created:
 
-```shell
+```bash
 $ kubectl describe pod my-kubernetes-dashboard
 
 Name:         my-kubernetes-dashboard
@@ -124,7 +124,7 @@ If you view the contents of that token, you'll see the values:
 - It is heavily restricted:
 - The token is only allowed to do basic k8s api queries.
 
-```shell
+```bash
 $ kubectl exec -it my-kubernetes-dashboard -- ls /var/run/secrets/kubernetes.io/serviceaccount
 
 ca.crt  namespace  token
@@ -213,7 +213,7 @@ They are:
 - Time bound
 - Object bound
 
-```shell
+```bash
 $ kubectl get pod ubuntu-sleeper -o yaml
 ```
 
@@ -279,7 +279,7 @@ With v1.24,
 
 You first create the service account:
 
-```shell
+```bash
 $ kubectl create serviceaccount dashboard-sa
 ```
 
@@ -287,7 +287,7 @@ Then create a token for the service account:
 
 - The token will be printed on to the screen
 
-```shell
+```bash
 $ kubectl create token dashboard-sa
 
 eyJhbGciOiJSUzI1NiI...

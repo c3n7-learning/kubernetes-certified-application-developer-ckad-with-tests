@@ -53,13 +53,13 @@ Is not the most user friendly CLI, but is used to debug ContainerD
 
 Pulling Images:
 
-```shell
+```bash
 ctr images pull docker.io/library/redis:alpine
 ```
 
 Running the image
 
-```shell
+```bash
 ctr run docker.io/library/redis:alpine redis
 ```
 
@@ -78,7 +78,7 @@ Is the recommended alternative
 
 Run a container:
 
-```shell
+```bash
 # Docker
 $ docker run --name redis redis:alpine
 
@@ -88,7 +88,7 @@ $ nerdctl run --name redis redis:alpine
 
 Or:
 
-```shell
+```bash
 # Docker
 $ docker run --name webserver -p 80:80 -d nginx
 
@@ -107,7 +107,7 @@ $ nerdctl run --name webserver -p 80:80 -d nginx
 
 Examples
 
-```shell
+```bash
 $ crictl pull busybox
 
 $ crictl images

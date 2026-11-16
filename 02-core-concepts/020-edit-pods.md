@@ -7,7 +7,7 @@ In any of the practical quizzes, if you are asked to **edit an existing POD**, p
 - If you are given a pod definition file, edit that file and use it to create a new pod.
 - **If you are not given a pod definition file**, you may extract the definition to a file using the below command:
 
-  ```shell
+  ```bash
   $ kubectl get pod <pod-name> -o yaml > pod-definition.yaml
   ```
 

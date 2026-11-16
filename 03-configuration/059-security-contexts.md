@@ -4,14 +4,14 @@ In docker, we saw:
 
 - To remove/add a capability to a docker container:
 
-```shell
+```bash
 $ docker run --cap-add MAC_ADMIN ubuntu
 $ docker run --cap-drop KILL ubuntu
 ```
 
 - To run with all capabilities
 
-```shell
+```bash
 $ docker run --privileged ubuntu
 ```
 

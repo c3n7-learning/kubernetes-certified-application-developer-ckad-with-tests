@@ -108,19 +108,19 @@ spec:
 
 To apply it:
 
-```shell
+```bash
 $ kubectl crate -f rc-definition.yml
 ```
 
 To get it:
 
-```shell
+```bash
 $ kubectl get replicationcontroller
 ```
 
 To see the pods created by the replication controller
 
-```shell
+```bash
 $ kubectl get pods
 
 NAME             READY   STATUS    RESTARTS   AGE
@@ -191,19 +191,19 @@ spec:
 
 Apply it:
 
-```shell
+```bash
 $ kubectl create -f code/021/rs-definition.yml
 ```
 
 Get it
 
-```shell
+```bash
 $ kubectl get replicaset
 ```
 
 Get the pods:
 
-```shell
+```bash
 $ kubectl get pods
 ```
 
@@ -255,19 +255,19 @@ spec:
 
 Apply it:
 
-```shell
+```bash
 $ kubectl create -f code/021/rs-definition.yml
 ```
 
 Get it
 
-```shell
+```bash
 $ kubectl get replicaset
 ```
 
 Get the pods:
 
-```shell
+```bash
 $ kubectl get pods
 ```
 
@@ -275,7 +275,7 @@ $ kubectl get pods
 
 We can use the cli to update the replicaset
 
-```shell
+```bash
 $ kubectl scale --replicas=6 <type> <name>
 $ kubectl scale --replicas=6 replicaset myapp-replicaset
 ```
@@ -284,30 +284,30 @@ $ kubectl scale --replicas=6 replicaset myapp-replicaset
 
 Create a replica set
 
-```shell
+```bash
 $ kubectl crate -f replicaset-definition.yml
 ```
 
 View replicasets:
 
-```shell
+```bash
 $ kubectl get replicaset
 ```
 
 Delete replicaset (with its pods):
 
-```shell
+```bash
 $ kubectl delete replicaset myapp-replicaset
 ```
 
 Replace or update the replicaset:
 
-```shell
+```bash
 $ kubectl replace -f replicaset-def
 ```
 
 Scale the replicaset (without modifying the spec file):
 
-```shell
+```bash
 $ kubectl scale -replicas=6 -f replicaset-definition.yml
 ```

@@ -8,14 +8,14 @@ Are used to store sensitive information, like passwords, or keys
 
 ### Imperatively:
 
-```shell
+```bash
 $ kubectl create secret generic <secret-name> \
     --from-literal=<key>=<value>
 ```
 
 Example:
 
-```shell
+```bash
 $ kubectl create secret generic app-secret \
     --from-literal=DB_Host=mysql \
     --from-literal=DB_User=root \
@@ -24,14 +24,14 @@ $ kubectl create secret generic app-secret \
 
 From file:
 
-```shell
+```bash
 $ kubectl create secret generic <secret-name> \
     --from-file=<path-to-file>
 ```
 
 Example:
 
-```shell
+```bash
 $ kubectl create secret generic <secret-name> \
     --from-file=app_secret.properties
 ```
@@ -40,7 +40,7 @@ $ kubectl create secret generic <secret-name> \
 
 Encode the values via base64, for example like:
 
-```shell
+```bash
 $ echo -n 'mysql' | base64
 $ echo -n 'root' | base64
 $ echo -n 'passwrd' | base64
@@ -61,7 +61,7 @@ data:
 
 Then apply it
 
-```shell
+```bash
 $ kubectl create -f secret-definition.yaml
 ```
 
@@ -69,25 +69,25 @@ $ kubectl create -f secret-definition.yaml
 
 To get all secrets in the namespace:
 
-```shell
+```bash
 $ kubectl get secrets
 ```
 
 To get the details of a secret (with the values hidden)
 
-```shell
+```bash
 $ kubectl describe secrets
 ```
 
 To view the hashed values as well
 
-```shell
+```bash
 $ kubectl get secret app-secret -o yaml
 ```
 
 To decode the values:
 
-```shell
+```bash
 echo -n "bXlzcWw=" | base64 --decode
 ```
 
@@ -147,7 +147,7 @@ volumes:
 
 - Each env value will be created as a file
 
-```shell
+```bash
 $ ls /opt/app-secret-volumes
 DB_host DB_Password DB_User
 

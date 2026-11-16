@@ -33,13 +33,13 @@ ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run
 
 Build it:
 
-```shell
+```bash
 $ docker build Dockerfile -t karanimwenda/my-custom-app
 ```
 
 Push it to docker registry
 
-```shell
+```bash
 $ docker push karanimwenda/my-custom-app
 ```
 
@@ -79,7 +79,7 @@ ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run    # Layer 5: Update Entr
 
 You can see sizes after running a build via:
 
-```shell
+```bash
 docker history karanimwenda/simple-webapp
 ```
 

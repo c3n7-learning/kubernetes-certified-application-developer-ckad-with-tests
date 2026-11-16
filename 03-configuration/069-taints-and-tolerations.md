@@ -13,7 +13,7 @@ Think of a Taint as Bug spray on the nodes, and Tolerations as which pods are to
 
 To taint a node:
 
-```shell
+```bash
 $ kubectl taint nodes node-name key=value:<taint-effect>
 ```
 
@@ -31,7 +31,7 @@ There are three taint effects
 
 Example:
 
-```shell
+```bash
 $ kubectl taint nodes node1 app=myapp:NoSchedule
 ```
 
@@ -39,7 +39,7 @@ $ kubectl taint nodes node1 app=myapp:NoSchedule
 
 Assume a node with the taint:
 
-```shell
+```bash
 $ kubectl taint nodes node1 app=blue:NoSchedule
 ```
 
@@ -70,7 +70,7 @@ We have been considering the Worker Nodes only
 - What of the master node?
 - Master Node has a taint that prevents pods from going to it
 
-```shell
+```bash
 $ kubectl describe node kubemaster | grep Taint
 
 Taints:             node-role.kubernetes.io/master:NoSchedule
@@ -78,7 +78,7 @@ Taints:             node-role.kubernetes.io/master:NoSchedule
 
 TO remove a taint from a node, add the `-` suffix like:
 
-```shell
+```bash
 $ kubectl taint nodes controlplane node-role.kubernetes.io/control-plane:NoSchedule-
 
 node/controlplane untainted

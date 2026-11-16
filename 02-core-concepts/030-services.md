@@ -72,13 +72,13 @@ spec:
 
 Create the service:
 
-```shell
+```bash
 $ kubectl create -f svc-definition.yml
 ```
 
 View the services:
 
-```shell
+```bash
 $ kubectl get services
 ```
 
@@ -156,7 +156,7 @@ What if the pods are on multiple nodes?
 
 And you can access any of the pods by the <node-ip>:<targetPort>
 
-```shell
+```bash
 $ curl http://192.168.1.2:30008
 $ curl http://192.168.1.3:30008
 $ curl http://192.168.1.4:30008

@@ -2,24 +2,24 @@
 
 If you forget resource names or shortnames or versions:
 
-```shell
+```bash
 $ kubectl api-resources
 ```
 
 To check details about a pod
 
-```shell
+```bash
 $ kubectl explain pods
 ```
 
 To go deeper
 
-```shell
+```bash
 $ kubectl explain pods.spec
 ```
 
 To show everything
 
-```shell
+```bash
 $ kubectl explain pods --recursive
 ```

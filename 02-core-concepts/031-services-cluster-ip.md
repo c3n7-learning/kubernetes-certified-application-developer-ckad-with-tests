@@ -40,13 +40,13 @@ spec:
 
 Create the service:
 
-```shell
+```bash
 $ kubectl create -f svc-definition.yml
 ```
 
 View the services:
 
-```shell
+```bash
 $ kubectl get services
 
 NAME         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE

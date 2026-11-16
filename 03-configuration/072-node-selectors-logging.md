@@ -29,14 +29,14 @@ spec:
 
 - First label the node:
 
-```shell
+```bash
 $ kubectl label nodes <node-name> <label-key>=<label-value>
 $ kubectl label nodes node-1 size=Large
 ```
 
 - Then create the pod:
 
-```shell
+```bash
 $ kubectl create -f pod.yaml
 ```
 

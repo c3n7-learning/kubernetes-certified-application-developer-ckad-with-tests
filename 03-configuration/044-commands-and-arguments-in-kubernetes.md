@@ -2,7 +2,7 @@
 
 We previously created a custom docker container:
 
-```shell
+```bash
 $ docker run --name ubuntu-sleeper ubuntu-sleeper
 $ docker run --name ubuntu-sleeper ubuntu-sleeper 10
 ```

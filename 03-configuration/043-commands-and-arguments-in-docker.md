@@ -2,13 +2,13 @@
 
 Say you run an ubuntu image
 
-```shell
+```bash
 $ docker run ubuntu
 ```
 
 It would run and exit immediately
 
-```shell
+```bash
 $ docker ps
 # nothing
 $ docker ps -a
@@ -23,7 +23,7 @@ Why?
 
 How to override the command for an image?
 
-```shell
+```bash
 $ docker run ubuntu [COMMAND]
 $ docker run ubuntu sleep 5
 ```
@@ -42,13 +42,13 @@ CMD sleep 5
 
 How to change the number fo seconds it sleeps?
 
-```shell
+```bash
 $ docker run ubuntu-sleeper sleep 10
 ```
 
 But we want to run it like:
 
-```shell
+```bash
 $ docker run ubuntu-sleeper 10
 ```
 
@@ -63,7 +63,7 @@ ENTRYPOINT ["sleep"]
 
 Now the parameters can be appended:
 
-```shell
+```bash
 $ docker run ubuntu-sleeper 10
 ```
 
@@ -77,7 +77,7 @@ CMD ["5"]
 
 Now we can run:
 
-```shell
+```bash
 $ docker run ubuntu-sleeper 10
 ```
 
@@ -85,12 +85,12 @@ Or:
 
 - Will use the 5 seconds
 
-```shell
+```bash
 $ docker run ubuntu-sleeper
 ```
 
 How to modify the entrypoint at runtime?
 
-```shell
+```bash
 $ docker run --entrypoint sleep2.0 ubuntu-sleeper 10
 ```

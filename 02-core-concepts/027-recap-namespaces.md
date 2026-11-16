@@ -49,25 +49,25 @@ Notes
 
 Getting pods in the `default` namespace:
 
-```shell
+```bash
 $ kubectl get pods
 ```
 
 Getting pods in a different namespace:
 
-```shell
+```bash
 $ kubectl get pods --namespace=kube-system
 ```
 
 Ceating pods in the `default` namespace:
 
-```shell
+```bash
 $ kubectl create -f pod-definition.yml
 ```
 
 Ceating pods in the `dev` namespace (imperatively):
 
-```shell
+```bash
 $ kubectl create -f pod-definition.yml --namespace=dev
 ```
 
@@ -101,13 +101,13 @@ metadata:
 
 Create It:
 
-```shell
+```bash
 $ kubectl create -f namespace-dev.yml
 ```
 
 Imperatively:
 
-```shell
+```bash
 $ kubectl create namespace dev
 ```
 
@@ -123,13 +123,13 @@ If we run any kubectl command, it will run on the default namespace. What if we 
 
 - We will revisit this later
 
-```shell
+```bash
 $ kubectl config set-context $(kubectl config current-context) --namespace=dev
 ```
 
 To view resources in all namespaces, use the `--all-namespaces` option
 
-```shell
+```bash
 $ kubectl get pod --all-namespaces
 ```
 
@@ -154,6 +154,6 @@ spec:
 
 Create it:
 
-```shell
+```bash
 $ kubectl create -f compute-quo
 ```

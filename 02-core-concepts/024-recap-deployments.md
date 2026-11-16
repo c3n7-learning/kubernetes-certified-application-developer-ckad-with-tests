@@ -41,30 +41,30 @@ spec:
 
 Create it:
 
-```shell
+```bash
 $ kubectl create -f deployment-definition.yml
 ```
 
 Get the deployments:
 
-```shell
+```bash
 $ kubectl get deployments
 ```
 
 Get replicasets created by the deployment:
 
-```shell
+```bash
 $ kubectl get replicaset
 ```
 
 Get the pods:
 
-```shell
+```bash
 $ kubectl get pods
 ```
 
 View all objects
 
-```shell
+```bash
 $ kubectl get all
 ```

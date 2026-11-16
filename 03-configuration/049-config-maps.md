@@ -54,14 +54,14 @@ APP_MODE: prod
 
 Structure:
 
-```shell
+```bash
 $ kubectl create configmap <config-name> \
     --from-literal=<key>=<value>
 ```
 
 Example:
 
-```shell
+```bash
 $ kubectl create configmap app-config \
     --from-literal=APP_COLOR=blue \
     --from-literal=APP_MODE=prod
@@ -69,7 +69,7 @@ $ kubectl create configmap app-config \
 
 With configs from file
 
-```shell
+```bash
 $ kubectl create configmap app-config \
     --from-file=app_config.properties
 ```
@@ -90,7 +90,7 @@ data:
 
 Then create it
 
-```shell
+```bash
 $ kubectl create -f config-values.yaml
 ```
 
@@ -98,13 +98,13 @@ $ kubectl create -f config-values.yaml
 
 Run
 
-```shell
+```bash
 $ kubectl get configmaps
 ```
 
 View the data in the configmap
 
-```shell
+```bash
 $ kubectl describe configmaps
 ```
 

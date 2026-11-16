@@ -4,7 +4,7 @@
 
 Assume we run:
 
-```shell
+```bash
 docker run ubuntu sleep 3600
 ```
 
@@ -24,7 +24,7 @@ If you want to run a processes in a container as root:
 
 - Imperatively:
 
-```shell
+```bash
 $ docker run --user=1001 ubuntu sleep 3600
 ```
 
@@ -77,13 +77,13 @@ Docker root user's capabilities
 
 To remove/add a capability to a docker container:
 
-```shell
+```bash
 $ docker run --cap-add MAC_ADMIN ubuntu
 $ docker run --cap-drop KILL ubuntu
 ```
 
 To run with all capabilities
 
-```shell
+```bash
 $ docker run --privileged ubuntu
 ```

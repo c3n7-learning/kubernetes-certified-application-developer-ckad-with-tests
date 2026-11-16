@@ -4,7 +4,7 @@
 
 Run a k3d cluster: https://k3d.io/stable/usage/exposing_services/#2-via-nodeport
 
-```shell
+```bash
 $ k3d cluster create mycluster -p "8082:30080@agent:0" --agents 2
 ```
 
@@ -25,7 +25,7 @@ myapp-pod   1/1     Running             0          21s
 
 A trick for creating a YAML file is
 
-```shell
+```bash
 $ kubectl run redis --image=redis123 --dry-run=client -o yaml
 $ kubectl run redis --image=redis123 --dry-run=client -o yaml > redis.yaml
 ```

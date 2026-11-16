@@ -6,7 +6,7 @@ We will follow this guide:
 
 Let's create a generic secret:
 
-```shell
+```bash
 $ kubectl create secret generic my-secret --from-literal=key1=supersecret
 ```
 
@@ -21,7 +21,7 @@ my-secret   Opaque   1      4s
 
 Let's see it's yaml:
 
-```shell
+```bash
 $ kubectl get secret my-secret -o yaml
 
 apiVersion: v1
@@ -39,7 +39,7 @@ type: Opaque
 
 We could base64 decode that value:
 
-```shell
+```bash
 $ echo 'c3VwZXJzZWNyZXQ=' | base64 --decode
 
 supersecret
@@ -57,7 +57,7 @@ Reference
 
 Install it:
 
-```shell
+```bash
 # Debian/Ubuntu
 $ apt-get install etcd-client
 
@@ -67,7 +67,7 @@ $ brew install etcd
 
 Let's see how it's been stored:
 
-```shell
+```bash
 ETCDCTL_API=3 etcdctl \
    --cacert=/etc/kubernetes/pki/etcd/ca.crt   \
    --cert=/etc/kubernetes/pki/etcd/server.crt \
@@ -107,7 +107,7 @@ Let's determine whether encryption at rest is already enabled
 
 - https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/#determining-whether-encryption-at-rest-is-already-enabled
 
-```shell
+```bash
 $ ps -aux | grep kube-api | grep "encryption-provider-config"
 
 # Nothing
@@ -117,7 +117,7 @@ In a kube-admin setup:
 
 - You won't see the `--encryption-provider-config` option
 
-```shell
+```bash
 $ cat /etc/kubernetes/manifests/kube-apiserver.yaml
 ```
 
@@ -187,7 +187,7 @@ resources:
 
 Generate the encryption key;
 
-```shell
+```bash
 $ head -c 32 /dev/urandom | base64
 
 4vrcam35HOqY0M7xKyAutg6LMF9KPYG6QR87DZcFzV0=
@@ -257,7 +257,7 @@ spec:
 
 On save, the api server will restart:
 
-```shell
+```bash
 $ kubectl get pods
 The connection to the server controlplane:6443 was refused - did you specify the right host or port?
 
@@ -266,7 +266,7 @@ $ crictl pods
 
 Once the api-server is back up, check if encryption has been configured successfully:
 
-```shell
+```bash
 $ ps -aux | grep kube-api | grep encryption
 ```
 
@@ -274,12 +274,12 @@ $ ps -aux | grep kube-api | grep encryption
 
 Create another secret
 
-```shell
+```bash
 $ kubectl create secret generic my-secret-2 --from-literal=key2=topsecret
 secret/my-secret-2 created
 ```
 
-```shell
+```bash
 ETCDCTL_API=3 etcdctl \
    --cacert=/etc/kubernetes/pki/etcd/ca.crt   \
    --cert=/etc/kubernetes/pki/etcd/server.crt \
@@ -317,7 +317,7 @@ All secrets (created after this change), will be encrypted.
 
 - To encrypt historical secrets
 
-```shell
+```bash
 # Run this as an administrator that can read and write all Secrets
 $ kubectl get secrets --all-namespaces -o json | kubectl replace -f -
 ```

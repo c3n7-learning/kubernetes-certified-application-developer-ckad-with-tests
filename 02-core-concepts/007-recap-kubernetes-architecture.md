@@ -52,18 +52,18 @@ Kube Command Line Tool or Kube Control
 
 Run a workload on the cluster:
 
-```shell
+```bash
 kubectl run hello-minikube
 ```
 
 Get info about the cluster
 
-```shell
+```bash
 kubectl cluster-info
 ```
 
 Get nodes in the cluster
 
-```shell
+```bash
 kubectl get nodes
 ```

@@ -59,7 +59,7 @@ Scaling in docker
 
 - You simply run more containers
 
-```shell
+```bash
 $ docker run python-app
 $ docker run python-app
 $ docker run python-app
@@ -73,7 +73,7 @@ We now have a helper container that helps our web app by processing or fetching 
   - a map of what connects to what using links and custom networks, volumes,
   - state monitoring to kill the helper container if the application container is killed
 
-```shell
+```bash
 $ docker run helper -link app1
 $ docker run helper -link app2
 $ docker run helper -link app3
@@ -91,7 +91,7 @@ $ docker run helper -link app4
 
 We previously saw:
 
-```shell
+```bash
 $ kubectl run nginx
 ```
 
@@ -103,13 +103,13 @@ Where does it get the image from?
 
 - By specifying the source with `--image`
 
-```shell
+```bash
 # kubectl run nginx --image nginx
 ```
 
 Getting pods in our cluster:
 
-```shell
+```bash
 $ kubectl get pods
 
 NAME                    READY   STATUS              RESTARTS   AGE
